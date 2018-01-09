@@ -4,10 +4,9 @@
 {{ $directory := "static/files/preprint/" }}
 {{ $filename := printf "%s%s.pdf" $directory $.File.TranslationBaseName }}
 {{ if fileExists $filename }}
-<button type="button" class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}} js-cite-modal"
-        data-filename="{{ printf "files/preprint/%s.pdf" $.File.TranslationBaseName | relURL }}">
+<a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ printf "files/preprint/%s.pdf" $.File.TranslationBaseName | relURL }}" target="_blank" rel="noopener">
   {{ i18n "btn_preprint" }}
-</button>
+</a>
 {{ end }}
 {{ with $.Params.url_preprint }}
 <a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ . | absURL }}" target="_blank" rel="noopener">
@@ -17,10 +16,9 @@
 {{ $directory := "static/files/pdf/" }}
 {{ $filename := printf "%s%s.pdf" $directory $.File.TranslationBaseName }}
 {{ if fileExists $filename }}
-<button type="button" class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}} js-cite-modal"
-        data-filename="{{ printf "files/pdf/%s.pdf" $.File.TranslationBaseName | relURL }}">
+<a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ printf "files/pdf/%s.pdf" $.File.TranslationBaseName | relURL }}" target="_blank" rel="noopener">
   {{ i18n "btn_pdf" }}
-</button>
+</a>
 {{ end }}
 {{ with $.Params.url_pdf }}
 <a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ . | absURL }}" target="_blank" rel="noopener">
@@ -58,13 +56,12 @@
 </a>
 {{ end }}
 {{ end }}
-{{ $directory := "static/poster/pdf/" }}
+{{ $directory := "static/files/poster/" }}
 {{ $filename := printf "%s%s.pdf" $directory $.File.TranslationBaseName }}
 {{ if fileExists $filename }}
-<button type="button" class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}} js-cite-modal"
-        data-filename="{{ printf "files/poster/%s.pdf" $.File.TranslationBaseName | relURL }}">
+<a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ printf "files/poster/%s.pdf" $.File.TranslationBaseName | relURL }}" target="_blank" rel="noopener">
   {{ i18n "btn_poster" }}
-</button>
+</a>
 {{ end }}
 {{ with $.Params.url_poster }}
 <a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ . | absURL }}" target="_blank" rel="noopener">
