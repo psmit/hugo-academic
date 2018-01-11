@@ -68,6 +68,13 @@
   {{ i18n "btn_poster" }}
 </a>
 {{ end }}
+{{ $directory := "static/files/slides/" }}
+{{ $filename := printf "%s%s.pdf" $directory $.File.TranslationBaseName }}
+{{ if fileExists $filename }}
+<a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ printf "files/slides/%s.pdf" $.File.TranslationBaseName | relURL }}" target="_blank" rel="noopener">
+{{ i18n "btn_slides" }}
+</a>
+{{ end }}
 {{ with $.Params.url_slides }}
 <a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ . | absURL }}" target="_blank" rel="noopener">
   {{ i18n "btn_slides" }}
